@@ -3,7 +3,6 @@ import axios from "axios";
 import "./App.css";
 import { useForm } from "react-hook-form";
 import { format } from "react-string-format";
-// import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [jobs, setJobs] = useState([{}]);
@@ -26,10 +25,6 @@ function App() {
     let url = format(
       "https://jbappbackend.azurewebsites.net/jobs?company={0}&title={1}&location={2}&salary={3}", data["company"], data["title"], data["location"], data["salary"]
       );
-      
-    // let url = format(
-    //   "http://127.0.0.1:5000/jobs?company={0}&title={1}&location={2}&salary={3}", data["company"], data["title"], data["location"], data["salary"]
-    // );
     axios.post(url, {
       company: data["company"],
       title: data["title"],
@@ -39,7 +34,7 @@ function App() {
     .then(function (response) {
       getStoredJobs();
     }).catch(function (error) {
-      // console.log(error)
+
     });
   };
 
@@ -47,15 +42,13 @@ function App() {
     let url = format(
       "https://jbappbackend.azurewebsites.net/jobs",
     );
-    // let url = "http://
-
     axios
       .delete(url)
       .then(function (response) {
         getStoredJobs();
       })
       .catch(function (error) {
-        // console.log(error)
+
       });
   };
 
@@ -63,8 +56,6 @@ function App() {
     let url = format(
       "https://jbappbackend.azurewebsites.net/jobs",
     );
-    // let url = "http://127.0.0.1:5000/jobs";
-    
     axios
       .get(url)
       .then(function (response) {
@@ -73,7 +64,7 @@ function App() {
       }
       )
       .catch(function (error) {
-        // console.log(error)
+        
       });
   };
 
