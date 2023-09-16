@@ -60,7 +60,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-height: 150px;
+  max-height: 115px;
   border: 1px solid white;
   max-width: 800px;
   margin: auto;
@@ -97,5 +97,13 @@ p {
 
 .jobs_list {
   margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.submit {
+  margin-bottom: 25px;
+}
+
+.delete {
   margin-bottom: 25px;
 }

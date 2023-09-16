@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Button } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import { useForm } from "react-hook-form";
@@ -116,9 +116,12 @@ function App() {
               {...register("salary", { required: true })}
             />
           </div>
-          <input class="text-box" type="submit" />
+          <input class="text-box submit" type="submit" />
         </form>
       }
+      <button onClick={getStoredJobs} class="text-box">
+        Refresh Jobs
+      </button>
       <div class="jobs_list">
         {displaying && jobs.result.map((job, i) => (
           <div  class="container">
@@ -142,9 +145,10 @@ function App() {
           ))}
       </div>
 
-      <button onClick={deleteJobs} class="text-box">
+      <button onClick={deleteJobs} class="text-box delete">
         Delete All Jobs
       </button>
+      
     </div>
   );
 }
