@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Button } from "react";
 import axios from "axios";
 import "./App.css";
 import { useForm } from "react-hook-form";
@@ -19,19 +19,7 @@ function App() {
 
   const onSubmit = (data) => {
     postNewJob(data);
-    
-    // var temp = [];
-    // if (jobs.result) {
-    //   temp = jobs.result;
-    // }
-    // else {
-    //   temp = [];
-    // }
-    // temp.push({"company": data.company, "title": data.title, "location": data.location, "salary": data.salary});
-    // setJobs({"result": temp});
-    
     reset();
-    // getRouteWeather(data.origin, data.destination);
   };
 
   const postNewJob = async (data) => {
@@ -50,10 +38,25 @@ function App() {
     .then(function (response) {
       getStoredJobs();
     }).catch(function (error) {
-      console.log(error)
+      // console.log(error)
     });
   };
 
+  const deleteJobs = async () => {
+    let url = format(
+      "https://jbappbackend.azurewebsites.net/jobs",
+    );
+    // let url = "http://
+
+    axios
+      .delete(url)
+      .then(function (response) {
+        getStoredJobs();
+      })
+      .catch(function (error) {
+        // console.log(error)
+      });
+  };
 
   const getStoredJobs = async () => {
     let url = format(
@@ -82,7 +85,7 @@ function App() {
               type="text"
               placeholder="Job Title"
               name="job-title"
-              class="first-box"
+              class="text-box"
               {...register("title", { required: true })}
             />
           </div>
@@ -116,15 +119,32 @@ function App() {
           <input class="text-box" type="submit" />
         </form>
       }
-
-      {displaying && jobs.result.map((job, i) => (
-          <div class="container">
-            <p key={i}>
-              {job["title"]}, {job["location"]}, {job["company"]}, {job["salary"]}
-            </p>
+      <div class="jobs_list">
+        {displaying && jobs.result.map((job, i) => (
+          <div  class="container">
+            <div key={i}>
+              <p class="title">
+                {job["title"]}
+              </p>
+              <p class="company">
+                {job["company"]}
+              </p>
+            </div>
+            <div>
+              <p class="location">
+                {job["location"]}
+              </p>
+              <p class="salary">
+                ${job["salary"].toLocaleString()}/year
+              </p>
+            </div>
           </div>
-        ))}
-      
+          ))}
+      </div>
+
+      <button onClick={deleteJobs} class="text-box">
+        Delete All Jobs
+      </button>
     </div>
   );
 }

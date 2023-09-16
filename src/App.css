@@ -1,16 +1,13 @@
 .App {
   text-align: center;
   min-height: 100vh;
-  /* min-width: 800px; */
-  /* max-width: 800px; */
-  /* min-height: 330px; */
-  /* max-height: auto; */
   background-color: #282c34;
   margin: 0
 }
 
 .form {
   min-width: 300px;
+  padding-top: 25px;
 }
 
 .text-box {
@@ -31,11 +28,6 @@
   align-items: center;
   justify-content: center;
   max-height: 81px;
-}
-
-.weather-icon {
-  width: 65px;
-  padding-bottom: 16px;
 }
 
 .App-header {
@@ -64,28 +56,46 @@ p {
   align-content: center;
 }
 
-.first-box {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.5rem;
-  font-weight: bold;
-  width: 25%;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  padding: 0.5rem;
-  height: 100%;
-}
-
-.open-directions {
-  max-width: 600px;
-  margin-top: 40px;
-}
-
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-height: 81px;
+  max-height: 150px;
   border: 1px solid white;
+  max-width: 800px;
+  margin: auto;
+}
+
+.title {
+  color: #61dafb;
+  font-size: 2.0rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.company {
+  font-style: italic;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color:cadetblue;
+  margin-top: 0.5rem;
+}
+
+.location {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+.salary {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color:rgb(185, 247, 247);
+  margin-top: 0.5rem;
+}
+
+.jobs_list {
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
