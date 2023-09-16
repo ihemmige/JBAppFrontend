@@ -26,6 +26,7 @@ function App() {
     let url = format(
       "https://jbappbackend.azurewebsites.net/jobs?company={0}&title={1}&location={2}&salary={3}", data["company"], data["title"], data["location"], data["salary"]
       );
+      
     // let url = format(
     //   "http://127.0.0.1:5000/jobs?company={0}&title={1}&location={2}&salary={3}", data["company"], data["title"], data["location"], data["salary"]
     // );
