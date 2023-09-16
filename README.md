@@ -9,3 +9,4 @@ To run locally:
 1. Navigate into the root directory and then into the 'frontend' directory. 
 2. Install the dependencies with 'npm install'. 
 3. Then, the app should run with command 'npm start' on localhost:3000.
+4. However, for the app to actually work with all functionality, the backend server must also be running locally. See JBAppBackend github link above.
